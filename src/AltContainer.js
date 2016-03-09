@@ -194,12 +194,12 @@ class AltContainer extends React.Component {
   }
 
   getProps() {
-    var flux = this.props.flux || this.context.flux
+    // var flux = this.props.flux || this.context.flux
     var transform = typeof this.props.transform === 'function'
       ? this.props.transform
       : id
     return transform(assign(
-      flux ? { flux: flux } : {},
+    //   flux ? { flux: flux } : {}, // Don't put alt instance in props - it breaks things with seamless-immutable
       this.state
     ))
   }
